@@ -12,7 +12,7 @@
 	<input type= "text" name="n1" /> <br/>
 	
 	
-	<input type="submit" name="valor" value="Resultado">
+	<input type="submit" name="valor" value="Notas">
 	
 	<br/>
 	</form>
