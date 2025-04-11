@@ -1,29 +1,8 @@
 <?php
-$palpite = $_POST['palpite'];
-$sorteado = $_POST['sorteado'];
-$tentativas = $_POST['tentativas'];
-
-if ($palpite == $sorteado) {
-    header("Location: resultado.php?sorteado=$sorteado&tentativas=$tentativas");
-    exit();
-} else {
-    $mensagem = $palpite > $sorteado ? "O número é menor!" : "O número é maior!";
-    $tentativas++;
-}
+$sorteado = $_GET['sorteado'];
+$tentativas = $_GET['tentativas'];
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tentando de novo...</title>
-</head>
-<body>
-    <h2><?= $mensagem ?></h2>
-    <form action="verifica.php" method="post">
-        <input type="number" name="palpite" required>
-        <input type="hidden" name="sorteado" value="<?= $sorteado ?>">
-        <input type="hidden" name="tentativas" value="<?= $tentativas ?>">
-        <button type="submit">Tentar novamente</button>
-    </form>
-</body>
-</html>
+<h2>Resultado Final</h2>
+<p>Você acertou o número <strong><?php echo $sorteado; ?></strong></p>
+<p>Você tentou <strong><?php echo $tentativas; ?></strong> <?php if ($tentativas == 1) { echo "vez"; } else { echo "vezes"; } ?></p>

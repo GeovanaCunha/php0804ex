@@ -1,15 +1,24 @@
 <?php
-$sorteado = $_GET['sorteado'];
-$tentativas = $_GET['tentativas'];
-?>
+$sorteado = $_POST['sorteado'];
+$palpite = $_POST['palpite'];
+$tentativas = $_POST['tentativas'];
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>VOCE ACERTOU :D</title>
-</head>
-<body>
-    <p>Número sorteado: <strong><?= $sorteado ?></strong></p>
-    <p>Tentativas: <strong><?= $tentativas ?></strong></p>
-</body>
-</html>
+if ($palpite == $sorteado) {
+  echo "<h2>Você acertou!</h2>";
+  echo "<form action='calcular.php' method='get'>
+          <input type='hidden' name='sorteado' value='$sorteado'>
+          <input type='hidden' name='tentativas' value='$tentativas'>
+          <button type='submit'>Ver resultado</button>
+        </form>";
+} else {
+  $tentativas++;
+  echo "<h2>Errou!</h2>";
+  echo "<p>Dica: o número é " . ($palpite < $sorteado ? "maior" : "menor") . ".</p>";
+
+  echo "<form action='verifica.php' method='post'>
+          <input type='number' name='palpite' required>
+          <input type='hidden' name='sorteado' value='$sorteado'>
+          <input type='hidden' name='tentativas' value='$tentativas'>
+          <button type='submit'>Tentar de novo</button>
+        </form>";
+}
