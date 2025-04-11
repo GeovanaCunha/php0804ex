@@ -5,7 +5,7 @@ $tentativas = $_POST['tentativas'];
 
 if ($palpite == $sorteado) {
   echo "<h2>Você acertou!</h2>";
-  echo "<form action='calcular.php' method='get'>
+  echo "<form action='../calcular/calcular.php' method='get'>
           <input type='hidden' name='sorteado' value='$sorteado'>
           <input type='hidden' name='tentativas' value='$tentativas'>
           <button type='submit'>Ver resultado</button>
