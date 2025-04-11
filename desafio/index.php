@@ -1,11 +1,8 @@
 <?php
-$sorteado = rand(1, 100);
+$sorteado = $_GET['sorteado'];
+$tentativas = $_GET['tentativas'];
 ?>
 
-<h2>Adivinhe o número</h2>
-<form action="verifica.php" method="post">
-  <input type="number" name="palpite" required>
-  <input type="hidden" name="sorteado" value="<?php echo $sorteado; ?>">
-  <input type="hidden" name="tentativas" value="1">
-  <button type="submit">Tentar</button>
-</form>
+<h2>Resultado Final</h2>
+<p>Você acertou o número <strong><?php echo $sorteado; ?></strong></p>
+<p>Você tentou <strong><?php echo $tentativas; ?></strong> <?php if ($tentativas == 1) { echo "vez"; } else { echo "vezes"; } ?></p>
