@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Dinheiro</title>
+
+<meta charset="UTF-8">
+
+<title>DINHEIRO</title>
+
 </head>
+
 <body>
-	<fieldset>
-	<legend> Dinheiro </legend>
-	<form method="post" action="calcular.php">
-	Digite o valor:
-	<input type= "text" name="n1" /> <br/>
-	
-	
-	<input type="submit" name="valor" value="Notas">
-	
-	<br/>
-	</form>
-	</fieldset>
+
+<h1>NOTAS</h1>
+
+<form action="calcular.php" method="post">
+
+<label for="valor">Digite o valor em reais:</label>
+
+<input type="number" name="valor" id="valor" required>
+
+<input type="submit" value="Calcular">
+
+</form>
+
 </body>
+
 </html>
