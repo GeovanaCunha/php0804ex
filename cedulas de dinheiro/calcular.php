@@ -3,7 +3,7 @@ $valor = $_POST['valor'];
 
 $notas = [100, 50, 20, 10, 5, 2, 1];
 
-echo "<h2>Nota necessária para compor R$$valor,00:</h2>";
+echo "<h2>Nota necessaria para compor R$$valor,00:</h2>";
 
 foreach ($notas as $nota) {
     $quantidade = intdiv($valor, $nota);
