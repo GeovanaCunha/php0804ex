@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Jogo do Número da Sorte</title>
-</head>
-<body>
-    <h2>Digite seu palpite!</h2>
-    <?php $sorteado = rand(0, 100); ?>
-    <form action="verifica.php" method="post">
-        <input type="number" name="palpite" required>
-        <input type="hidden" name="sorteado" value="<?= $sorteado ?>">
-        <input type="hidden" name="tentativas" value="1">
-        <button type="submit">Enviar</button>
-    </form>
-</body>
-</html>
+<?php
+$sorteado = rand(1, 100);
+?>
+
+<h2>Adivinhe o número</h2>
+<form action="verifica.php" method="post">
+  <input type="number" name="palpite" required>
+  <input type="hidden" name="sorteado" value="<?php echo $sorteado; ?>">
+  <input type="hidden" name="tentativas" value="1">
+  <button type="submit">Tentar</button>
+</form>
